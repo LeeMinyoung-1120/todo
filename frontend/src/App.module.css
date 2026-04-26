@@ -1,0 +1,280 @@
+:global(html), :global(body), :global(#root) {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Inter', 'Pretendard', sans-serif;
+}
+
+.wrapper {
+  background:
+    radial-gradient(at 0% 0%, rgba(108, 131, 255, 0.12), transparent 50%),
+    radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.12), transparent 50%),
+    #f8f9ff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 60px 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.glassCard {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.6);
+  box-shadow: 0 8px 30px rgba(108, 131, 255, 0.08);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #1a1a1a;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #8a8fa3;
+  margin-top: 6px;
+}
+
+.headerDate {
+  font-size: 15px;
+  color: #555;
+}
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.statCard {
+  composes: glassCard;
+  padding: 22px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.statLabel {
+  font-size: 12px;
+  color: #9aa0b4;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.statNumber {
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.filterSection {
+  composes: glassCard;
+  padding: 24px;
+  border-radius: 20px;
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.filterHeader {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.filterRow, .searchRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-right: 30px;
+}
+
+.filterLabel {
+  padding-left: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  margin-right: 6px;
+}
+
+/* 버튼 */
+.filterBtn {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid #eee;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.filterBtnActive {
+  background: #6C83FF;
+  color: #fff;
+  border-color: #6C83FF;
+}
+
+/* 검색 */
+.leftBlock { padding-left: 30px; width: 500px; }
+
+.rightBlock { padding-right: 30px; width: 240px; }
+
+.searchInput {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  background: rgba(255,255,255,0.7);
+}
+
+.sortSelect {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  color: #666;
+}
+
+.addCard {
+  composes: glassCard;
+  padding: 28px;
+  border-radius: 20px;
+  margin-bottom: 32px;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.inputMain {
+  width: 100%;
+  padding: 14px 0;
+  border: none;
+  border-bottom: 2px solid #f1f1f1;
+  font-size: 16px;
+  margin-bottom: 20px;
+  outline: none;
+  background: transparent;
+}
+
+.addOptionsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.selectors {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.selectBox {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  font-size: 13px;
+  background: white;
+}
+
+.priorityBtn {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid #eee;
+  font-size: 12px;
+  background: white;
+  cursor: pointer;
+}
+
+.plusButton {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #6C83FF, #8B5CF6);
+  color: white;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(108,131,255,0.3);
+}
+
+.todoItem {
+  composes: glassCard;
+  background: rgba(255,255,255,0.6);
+  padding: 16px 20px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* 텍스트 */
+.todoText {
+  font-size: 14px;
+  color: #333;
+}
+
+/* 태그 */
+.tag {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* 카테고리 */
+.categoryStudy {
+  background: #eef2ff;
+  color: #6C83FF;
+}
+
+/* 우선순위 */
+.priorityHigh {
+  background: #ffecec;
+  color: #ff6b6b;
+}
+
+.priorityMedium {
+  background: #fff6e5;
+  color: #ffb800;
+}
+
+.priorityLow {
+  background: #eafaf1;
+  color: #22c55e;
+}
+
+/* 날짜 */
+.dateCaption {
+  font-size: 12px;
+  color: #9aa0b4;
+}
