@@ -8,8 +8,7 @@ const app = express();
 const PORT = 3001;
 
 // 미들웨어 설정 (주석 해제 필수!)
-// CORS 설정: 프론트엔드가 Vite 개발 서버에서 실행 중이므로, 해당 도메인과 포트를 허용해야 합니다.
-app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
+app.use(cors({ origin: 'http://localhost:3001', credentials: true }));
 app.use(express.json()); // JSON 데이터를 파싱하기 위해 꼭 필요합니다.
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
@@ -17,7 +16,7 @@ app.use('/static', express.static(path.join(__dirname, 'public')));
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('✅ MongoDB Connected...'))
   .catch((err) => {
-    console.error("❌ DB Connection Error:", err.messabage);
+    console.error("❌ DB Connection Error:", err.message);
   });
 
 // 1. 임시 모델 정의 (컬렉션 이름을 'todos'로 명시)
@@ -61,12 +60,6 @@ app.get('/get', async (req, res) => {
     console.log("err data get");
   }
 });
-
-// 라우터 설정
-app.use('/tasks', require('./routes/read'));
-app.use('/tasks', require('./routes/create'));
-app.use('/tasks', require('./routes/modify'));
-app.use('/tasks', require('./routes/delete'));
 
 app.get('/', (req, res) => res.send('Todo API Server is Running!'));
 
