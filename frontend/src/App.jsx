@@ -3,11 +3,7 @@ import styles from './App.module.css';
 
 function App() {
   // 할 일 목록 상태
-  const [todos, setTodos] = useState([
-    { id: 1, text: '리액트 프로젝트 UI 설계', category: 'Study', priority: 'High', date: '2026-04-25', completed: false },
-    { id: 2, text: '매일 30분 운동하기', category: 'Health', priority: 'Low', date: '2026-05-02', completed: true },
-    { id: 3, text: '주간 회의 자료 준비', category: 'Work', priority: 'Medium', date: '2026-05-01', completed: false },
-  ]);
+  const [todos, setTodos] = useState([]);
 
   // 입력값 관리를 위한 상태
   const [inputText, setInputText] = useState('');
