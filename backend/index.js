@@ -7,8 +7,11 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = 3001;
 
-// 미들웨어 설정 (주석 해제 필수!)
-app.use(cors({ origin: 'http://localhost:3001', credentials: true }));
+// 미들웨어 설정 (프론트 개발 서버에서의 요청 허용)
+app.use(cors({
+  origin: ['http://localhost:5173', 'http://127.0.0.1:5173', 'http://localhost:3000'],
+  credentials: true,
+}));
 app.use(express.json()); // JSON 데이터를 파싱하기 위해 꼭 필요합니다.
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
