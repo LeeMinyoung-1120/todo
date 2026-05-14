@@ -66,11 +66,11 @@ function App() {
     try {
       const res = await fetch(`${API}/tasks/${todo._id}`, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ is_completed: !todo.is_completed }),
+        headers: { 'Content-Type': 'application/json' },// JSON 형식으로 데이터 전송
+        body: JSON.stringify({ is_completed: !todo.is_completed }), // 체크박스 클릭 시 현재 상태의 반대로 업데이트
       });
       const updated = await res.json(); // 업데이트된 할 일 데이터 받아오기
-      setTodos(todos.map(t => t._id === todo._id ? updated : t)); // 업데이트된 할 일로 상태 갱신
+      setTodos(todos.map(t => t._id === todo._id ? updated : t));// 업데이트된 데이터로 교체하여 상태 갱신
     } 
     // 에러 처리
     catch (err) {
@@ -179,6 +179,7 @@ function App() {
               </div>
             </div>
           </div>
+          {/* [기능] 검색 + 정렬 UI */}
           <div className={styles.searchRow}>
             <div className={styles.leftBlock}>
               <input
@@ -274,6 +275,7 @@ function App() {
                 </span>
               </div>
               <div className={styles.dateCaption}>{todo.due_date?.slice(0, 10)}</div>
+              {/* [기능] 삭제 버튼 */}
               <button onClick={() => handleDelete(todo._id)} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>delete</button>
             </div>
           ))}
