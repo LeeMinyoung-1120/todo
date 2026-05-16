@@ -27,7 +27,7 @@
 
 ## 실제 동작 화면 영상
 1. 화면 실행 및 기본 동작 (할 일 추가, 필터, 검색, 정렬 등)
-<img width="1280" height="720" alt="2026_05_16 19_25" src="https://github.com/user-attachments/assets/1d518807-8e81-4f7f-92e0-b54f901b74d9" />
+<img width="1280" height="720" alt="2026_05_16 19_25" src="./2026_05_16 19_25.gif" />
 
 2. DB 연동 확인
 <img width="1280" height="720" alt="2026_05_16 19_25 (1)" src="https://github.com/user-attachments/assets/b22aedf2-9eaa-4f50-89fc-e9715ac78fab" />
